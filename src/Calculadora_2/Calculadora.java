@@ -6,8 +6,10 @@
 
 package Calculadora_2;
 
+import javax.swing.JOptionPane;
+
 /**
- *
+ * 
  * @author Alecs
  */
 public class Calculadora extends javax.swing.JFrame {
@@ -17,6 +19,7 @@ public class Calculadora extends javax.swing.JFrame {
      */
     public Calculadora() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -28,31 +31,256 @@ public class Calculadora extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jToggleButton1 = new javax.swing.JToggleButton();
+        BtnSuma = new javax.swing.JToggleButton();
+        BtnResta = new javax.swing.JToggleButton();
+        BtnMultiplicar = new javax.swing.JToggleButton();
+        BtnDividir = new javax.swing.JToggleButton();
+        Num1 = new javax.swing.JTextField();
+        Num2 = new javax.swing.JTextField();
+        BtnBorrar = new javax.swing.JToggleButton();
+        resul = new javax.swing.JLabel();
+        BtnPorcentaje = new javax.swing.JToggleButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToggleButton1.setText("SUMAR");
+        BtnSuma.setText("SUMAR");
+        BtnSuma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnSumaActionPerformed(evt);
+            }
+        });
+
+        BtnResta.setText("RESTA");
+        BtnResta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnRestaActionPerformed(evt);
+            }
+        });
+
+        BtnMultiplicar.setText("MULTIPLICAR");
+        BtnMultiplicar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnMultiplicarActionPerformed(evt);
+            }
+        });
+
+        BtnDividir.setText("DIVIDIR");
+        BtnDividir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnDividirActionPerformed(evt);
+            }
+        });
+
+        BtnBorrar.setFont(new java.awt.Font("Blackoak Std", 0, 18)); // NOI18N
+        BtnBorrar.setText("C");
+        BtnBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnBorrarActionPerformed(evt);
+            }
+        });
+
+        BtnPorcentaje.setText("%");
+        BtnPorcentaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnPorcentajeActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(52, 52, 52)
-                .addComponent(jToggleButton1)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(BtnMultiplicar)
+                        .addContainerGap(265, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(BtnResta)
+                                    .addComponent(BtnSuma)
+                                    .addComponent(Num1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(Num2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(77, 77, 77))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(BtnBorrar)
+                                        .addGap(87, 87, 87))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(20, 20, 20)
+                                        .addComponent(BtnPorcentaje))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(BtnDividir)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(resul, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(64, 64, 64))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(jToggleButton1)
-                .addContainerGap(190, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Num1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Num2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48)
+                        .addComponent(BtnSuma))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(BtnBorrar)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnResta)
+                    .addComponent(BtnPorcentaje))
+                .addGap(18, 18, 18)
+                .addComponent(BtnMultiplicar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(BtnDividir)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(18, 18, Short.MAX_VALUE)
+                        .addComponent(resul)
+                        .addGap(67, 67, 67))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BtnSumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnSumaActionPerformed
+        float resultado;
+        String numero1=Num1.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        String numero2=Num2.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        float Numero1,Numero2;
+        try {
+            Numero1=Float.parseFloat(numero1);
+            Numero2=Float.parseFloat(numero2);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un número para ralizar las operaciones.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;            
+        }
+        resultado=Numero1+Numero2;
+        resul.setText("El Resultado de la suma es "+resultado);
+    }//GEN-LAST:event_BtnSumaActionPerformed
+
+    private void BtnRestaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnRestaActionPerformed
+        float resultado;
+        String numero1=Num1.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        String numero2=Num2.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        float Numero1,Numero2;
+        try {
+            Numero1=Float.parseFloat(numero1);
+            Numero2=Float.parseFloat(numero2);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un número para ralizar las operaciones.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;            
+        }
+        resultado=Numero1-Numero2;
+        resul.setText("El Resultado de la resta es "+resultado);
+    }//GEN-LAST:event_BtnRestaActionPerformed
+
+    private void BtnMultiplicarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnMultiplicarActionPerformed
+        float resultado;
+        String numero1=Num1.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        String numero2=Num2.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        float Numero1,Numero2;
+        try {
+            Numero1=Float.parseFloat(numero1);
+            Numero2=Float.parseFloat(numero2);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un número para ralizar las operaciones.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;            
+        }
+        resultado=Numero1*Numero2;
+        resul.setText("El Resultado de la multiplicacion es "+resultado);
+        //TextResultado.setText("El Resultado de la division es "+resultado);
+    }//GEN-LAST:event_BtnMultiplicarActionPerformed
+
+    private void BtnDividirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnDividirActionPerformed
+         float resultado;
+        String numero1=Num1.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        String numero2=Num2.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        float Numero1,Numero2;
+        try {
+            Numero1=Float.parseFloat(numero1);
+            Numero2=Float.parseFloat(numero2);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un número para ralizar las operaciones.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;            
+        }
+        resultado=Numero1/Numero2;
+        resul.setText("El Resultado de la Division es "+resultado);
+    }//GEN-LAST:event_BtnDividirActionPerformed
+
+    private void BtnBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnBorrarActionPerformed
+      Num1.setText("");
+      Num2.setText("");
+    }//GEN-LAST:event_BtnBorrarActionPerformed
+
+    private void BtnPorcentajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnPorcentajeActionPerformed
+        float resultado;
+        String numero1=Num1.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        String numero2=Num2.getText();
+        if (numero1.isEmpty()){
+            JOptionPane.showMessageDialog(this,"debe ingresar un valor ");
+            return;
+        }
+        float Numero1,Numero2;
+        try {
+            Numero1=Float.parseFloat(numero1);
+            Numero2=Float.parseFloat(numero2);
+        }catch(NumberFormatException e){
+            JOptionPane.showMessageDialog(this, "Debe ingresar un número para ralizar las operaciones.", "Error", JOptionPane.ERROR_MESSAGE);
+            return;            
+        }
+        resultado=(Numero1*Numero2)/100;
+        resul.setText("El "+Num1+" % de "+Num2+" Es "+resultado);
+    }//GEN-LAST:event_BtnPorcentajeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -90,6 +318,14 @@ public class Calculadora extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton BtnBorrar;
+    private javax.swing.JToggleButton BtnDividir;
+    private javax.swing.JToggleButton BtnMultiplicar;
+    private javax.swing.JToggleButton BtnPorcentaje;
+    private javax.swing.JToggleButton BtnResta;
+    private javax.swing.JToggleButton BtnSuma;
+    private javax.swing.JTextField Num1;
+    private javax.swing.JTextField Num2;
+    private javax.swing.JLabel resul;
     // End of variables declaration//GEN-END:variables
 }
